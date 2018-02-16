@@ -1,5 +1,8 @@
 package com.eurekha.producer.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 
 import org.apache.log4j.Logger;
@@ -47,11 +50,18 @@ public class ProducerController {
 
 	}
 	
-	/*@RequestMapping("/getData")
-	public void getData() {
+	@RequestMapping(value="getStudentData", method=RequestMethod.GET)
+	public List<StudentDetails> getData() {
 		
+		List <StudentDetails> studentlist = new ArrayList<StudentDetails>();
+		student.setStudentid(5123);
+		student.setName("AbhiKrish");
+		student.setSchoolname("SVCE");
 		
-	}*/
+		studentlist.add(student);
+		return studentlist;
+		
+	}
 	
 	public Docket getSwagger() {
 		
